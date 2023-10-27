@@ -57,7 +57,7 @@ def process_log_file(cur, filepath):
 
         # insert songplay record
         # TO-DO: COMPLETE WHEN ERROR IS RESOLVED
-        ongplay_data = (row.ts, row.userId, row.level, song_id, artist_id, row.sessionId, row.location, row.userAgent)
+        songplay_data = (row.ts, row.userId, row.level, song_id, artist_id, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
 
