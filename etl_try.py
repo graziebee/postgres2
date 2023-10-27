@@ -51,13 +51,13 @@ def process_log_file(cur, filepath):
         results = cur.fetchone()
         
         if results:
-            songid, artistid = results
+            song_id, artist_id = results
         else:
-            songid, artistid = None, None
+            song_id, artist_id = None, None
 
         # insert songplay record
         # TO-DO: COMPLETE WHEN ERROR IS RESOLVED
-        songplay_data = (row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
+        ongplay_data = (row.ts, row.userId, row.level, song_id, artist_id, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
 
